@@ -20,4 +20,5 @@ A new Flutter plugin project.
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
+  s.dependency 'QAPM', :git => 'https://github.com/TencentCloud/QAPM-iOS-CocoaPods.git', :tag => '5.3.7'
 end

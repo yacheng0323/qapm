@@ -2,19 +2,12 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - qapm (0.0.1):
-    - Flutter
-  - QAPM (5.3.5)
+  - qapm (5.3.7)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
-  - QAPM
   - qapm (from `.symlinks/plugins/qapm/ios`)
-
-SPEC REPOS:
-  https://github.com/TencentCloud/QAPM-iOS-CocoaPods.git:
-    - QAPM
 
 EXTERNAL SOURCES:
   Flutter:
@@ -27,9 +20,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
-  QAPM: 9cd39cf402b5b70a2b382b85507ba4c2e03e235c
-  qapm: ed48598614a1482b29e80a4786d2d904ccea7769
+  qapm: d36e585f94a383c68df08cdb43d65f138efc6e8d
 
-PODFILE CHECKSUM: 2f2bb7ce826ae04fd885596f43a3182fc6c4390f
+PODFILE CHECKSUM: cd6d33a46687accde78131de194299de79c425c5
 
 COCOAPODS: 1.15.2

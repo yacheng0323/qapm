@@ -23,7 +23,7 @@ A new Flutter plugin project.
 
   s.subspec "QAPM" do |ss|
     ss.dependency 'QAPM'
-    ss.source_files = '../qapm-sdk/**/*'
+    ss.source_files = 'qapm-sdk-ios/**/*.{h,m,swift}'
   end
 end
 

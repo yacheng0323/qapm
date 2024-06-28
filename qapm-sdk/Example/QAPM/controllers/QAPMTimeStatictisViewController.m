@@ -7,7 +7,7 @@
 //
 
 #import "QAPMTimeStatictisViewController.h"
-#import "UIButton+Utils.h"
+#import "../../../../qapm-sdk-ios-main/Example/QAPM/controllers/UIButton+Utils.h"
 //#import <QAPM/QAPM.h>
 
 @interface QAPMTimeStatictisViewController ()

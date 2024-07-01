@@ -4,7 +4,7 @@ import UIKit
 public class SwiftQapmPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "qapm_channel", binaryMessenger: registrar.messenger())
-    let instance = QapmPlugin()
+    let instance = SwiftQapmPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

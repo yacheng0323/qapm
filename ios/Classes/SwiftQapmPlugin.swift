@@ -1,6 +1,5 @@
 import Flutter
 import UIKit
-import QAPM
 
 public class SwiftQapmPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {

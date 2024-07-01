@@ -1,11 +1,11 @@
 #import "QAPMSigkillViewController.h"
-#import "../../../../qapm-sdk-ios-main/Example/QAPM/controllers/YYWeakProxy.h"
+#import "../../../../../qapm-sdk-ios-main/Example/QAPM/controllers/YYWeakProxy.h"
 #include <sys/socket.h>
 #include <sys/sysctl.h>
 #include <net/if.h>
 #include <net/if_dl.h>
 #import <mach/mach.h>
-#import "../../../../qapm-sdk-ios-main/Example/QAPM/controllers/UIButton+Utils.h"
+#import "../../../../../qapm-sdk-ios-main/Example/QAPM/controllers/UIButton+Utils.h"
 
 @interface TestContact : NSObject
 

@@ -7,7 +7,7 @@
 //
 
 #import "QAPMCrashViewController.h"
-#import "../../../../qapm-sdk-ios-main/Example/QAPM/controllers/Crasher.h"
+#import "../../../../../qapm-sdk-ios-main/Example/QAPM/controllers/Crasher.h"
 //#import <QAPM/QAPM.h>
 
 @interface QAPMCrashViewController () <UITableViewDelegate, UITableViewDataSource>

@@ -2,8 +2,9 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
+  - qapm (0.0.1):
+    - Flutter
   - QAPM (5.3.5)
-  - qapm (5.3.5)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -27,8 +28,8 @@ SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
   QAPM: 9cd39cf402b5b70a2b382b85507ba4c2e03e235c
-  qapm: 5240a5590804f1a842b84bf05d94b1067b351adb
+  qapm: e3d18d93879e21963ed207fa793f1fbdf7ae9098
 
-PODFILE CHECKSUM: 7a6b4cc4282d853834f829b03cb18a3699f43302
+PODFILE CHECKSUM: 2f2bb7ce826ae04fd885596f43a3182fc6c4390f
 
 COCOAPODS: 1.15.2

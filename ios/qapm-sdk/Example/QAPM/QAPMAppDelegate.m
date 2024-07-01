@@ -10,7 +10,7 @@
 #import <QAPM/QAPM.h>
 #import <QAPM/QAPMLaunchProfile.h>
 #import <QAPM/QAPMFoomProfile.h>
-#import "../../../qapm-sdk-ios-main/Example/QAPM/APMMainListViewController.h"
+#import "../../../../qapm-sdk-ios-main/Example/QAPM/APMMainListViewController.h"
 @implementation QAPMAppDelegate
 
 #if defined(DEBUG) || defined(RDM)

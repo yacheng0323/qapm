@@ -13,10 +13,10 @@ A new Flutter plugin project.
   s.license          = { :type => "MIT", :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
-  s.source_files     = 'Classes/**/*'
-  s.xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => '../ios/qapm-sdk/Runner-Bridging-Header.h' } 
+  s.source_files     = 'Classes/**/*','qapm-sdk/**/*.{h,m,swift}'
+  # s.xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => 'qapm-sdk/Runner-Bridging-Header.h' } 
 
-  # s.public_header_files = '../ios/qapm-sdk/**/*.h'
+  s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.platform = :ios, '12.0'
   

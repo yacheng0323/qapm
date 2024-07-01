@@ -14,7 +14,6 @@ A new Flutter plugin project.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files     = 'Classes/**/*','qapm-sdk/**/*.{h,m,swift}'
-  # s.xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => 'qapm-sdk/Runner-Bridging-Header.h' } 
 
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
@@ -24,20 +23,7 @@ A new Flutter plugin project.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
   s.vendored_frameworks = 'qapm-sdk/QAPM.framework'
-
-  # s.subspec 'QAPM' do |ss|
-  #   ss.public_header_files = '../ios/qapm-sdk/**/*.h'
-  #   ss.source_files = '../ios/qapm-sdk/**/*.{h,m,swift}'
-  #   ss.requires_arc = true
-  #   ss.resources = ['../ios/qapm-sdk/QAPM.framework/*.bundle']
-  #   ss.pod_target_xcconfig  = { 
-  #     'ENABLE_BITCODE' => 'NO',
-  #     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
-  #     'VALID_ARCHS' => 'arm64 x86_64 arm64e i386 armv7'
-  #   }
-  #   ss.libraries = 'z', 'c++', 'resolv'
-  #   ss.vendored_frameworks  = "../ios/qapm-sdk/QAPM.framework"
-  # end
+  s.libraries = 'z', 'c++', 'resolv'
 
 end
 

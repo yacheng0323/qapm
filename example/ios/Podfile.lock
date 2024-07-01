@@ -4,7 +4,10 @@ PODS:
     - Flutter
   - qapm (0.0.1):
     - Flutter
+    - qapm/QAPM (= 0.0.1)
   - QAPM (5.3.5)
+  - qapm/QAPM (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -28,7 +31,7 @@ SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
   QAPM: 9cd39cf402b5b70a2b382b85507ba4c2e03e235c
-  qapm: 037bcb9f20d7746924028db64c1bab960bf271bd
+  qapm: 3483d4bb578cb3625958f56e2099b9a6b50953ca
 
 PODFILE CHECKSUM: 2f2bb7ce826ae04fd885596f43a3182fc6c4390f
 

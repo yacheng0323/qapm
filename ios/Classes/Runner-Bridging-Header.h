@@ -1,17 +1,2 @@
 #import <QAPM/QAPM.h>
 #import <QAPM/QAPMLaunchProfile.h>
-#import <QAPM/QAPMBigChunkMemoryProfile.h>
-#import <QAPM/QAPMBlueProfile.h>
-#import <QAPM/QAPMConfig.h>
-#import <QAPM/QAPMCrashProfile.h>
-#import <QAPM/QAPMCustomLagUploadCenter.h>
-#import <QAPM/QAPMFoomProfile.h>
-#import <QAPM/QAPMHttpProfile.h>
-#import <QAPM/QAPMModelStableConfig.h>
-#import <QAPM/QAPMMonitorLoggerDefine.h>
-#import <QAPM/QAPMQQLeakProfile.h>
-#import <QAPM/QAPMResourceProfile.h>
-#import <QAPM/QAPMUBSMonitor.h>
-#import <QAPM/QAPMUtilities.h>
-#import <QAPM/QAPMWebViewProfile.h>
-#import <QAPM/QAPMYellowProfile.h>

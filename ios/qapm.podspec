@@ -23,6 +23,9 @@ A new Flutter plugin project.
 
   s.subspec 'QAPM' do |ss|
     ss.source_files = 'qapm-sdk/**/*.{h,m,swift}'
+    ss.source = { :git => "https://github.com/TencentCloud/qapm-sdk-ios.git",:tag => "#{s.version}" }
+    ss.license      = { :type => "MIT", :file => "LICENSE" }
+    ss.resources = ['qapm-sdk/QAPM.framework/*.bundle']
   end
 
 end

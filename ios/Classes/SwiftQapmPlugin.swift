@@ -1,7 +1,8 @@
 import Flutter
 import UIKit
+import QAPM
 
-public class QapmPlugin: NSObject, FlutterPlugin {
+public class SwiftQapmPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "qapm_channel", binaryMessenger: registrar.messenger())
     let instance = QapmPlugin()

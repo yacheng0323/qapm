@@ -14,6 +14,7 @@ A new Flutter plugin project.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*','qapm-sdk/**/*.{h,m,swift}'
+  s.public_header_files = 'qapm-sdk/**/*.h' # 確保頭文件可見
   s.dependency 'Flutter'
   s.platform = :ios, '12.0'
 

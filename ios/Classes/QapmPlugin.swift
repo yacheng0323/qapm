@@ -10,10 +10,10 @@ public class QapmPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-   if call.method == "qapm" {
+    if call.method == "qapm" {
       if let dict = call.arguments as? [String: Any] {
         if let deviceId = dict["deviceId"] as? String {
-            QAPMConfig.getInstance().deviceID = deviceId
+          QAPMConfig.getInstance().deviceID = deviceId
         }
         if let userId = dict["userId"] as? String {
             QAPMConfig.getInstance().userId = userId
@@ -22,28 +22,43 @@ public class QapmPlugin: NSObject, FlutterPlugin {
             QAPMConfig.getInstance().customerAppVersion = customerAppVersion
         }
         if let appKey = dict["appKey"] as? String {
-          // 启动QAPM
           QAPMConfig.getInstance().collectOptionalFields = true
-          print("qapm sdk version : \(QAPM.sdkVersion())")
+          print("qapm sdk version: \(QAPM.sdkVersion())")
           // QAPM.registerLogCallback { level, log in
-          // #if DEBUG
-          //   if let log = log {
-          //     print("QAPM: \(String(cString: log))")
-          //   }
-          // #endif
+          //   #if DEBUG
+          //     if let log = log {
+          //       print("QAPM: \(String(cString: log))")
+          //     }
+          //   #endif
           // }
           QAPMConfig.getInstance().host = "https://app.rumt-sg.com"
           QAPMModelStableConfig.getInstance().setupModelAll()
           QAPM.start(withAppKey: appKey)
-          }
-          result(nil)
-          } else {
-            result(FlutterError(code: "INVALID_ARGUMENT", message: "Invalid argument", details: nil))
-           }
-       } else {
-           result(FlutterMethodNotImplemented)
-       }
+        }
+        result(nil)
+      } else {
+        result(FlutterError(code: "INVALID_ARGUMENT", message: "Invalid argument", details: nil))
+      }
+    } else if call.method == "customEvent" {
+      handleCustomEvent(call, result: result)
+    } else {
+      result(FlutterMethodNotImplemented)
+    }
   }
 
-  
+  private func handleCustomEvent(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+   if let dict = call.arguments as? [String: Any],
+      let category = dict["category"] as? String,
+      let tags = dict["tags"] as? [String: String],
+      let values = dict["values"] as? [String: NSNumber] {
+      let eventUUID = QAPM.customEvent(category, tags: tags, values: values)
+      if let eventUUID = eventUUID {
+         result(eventUUID)
+      } else {
+         result(FlutterError(code: "EVENT_CREATION_FAILED", message: "Failed to create custom event", details: nil))
+      }
+   } else {
+      result(FlutterError(code: "INVALID_ARGUMENT", message: "Invalid argument", details: nil))
+   }
+}
 }

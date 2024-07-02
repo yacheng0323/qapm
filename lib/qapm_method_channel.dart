@@ -25,5 +25,13 @@ class MethodChannelQapm extends QapmPlatform {
     final initcode = await methodChannel.invokeMethod<String>("qapm", config);
     return initcode;
   }
+
+  @override
+  Future<String?> customEvent(String category, Map<String, String> tags,
+      Map<String, int> values) async {
+    final eventUUID = await methodChannel.invokeMethod<String>(
+        "customEvent", {"category": category, "tags": tags, "values": values});
+    return eventUUID;
+  }
   
 }

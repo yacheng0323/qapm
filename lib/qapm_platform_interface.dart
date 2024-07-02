@@ -30,4 +30,9 @@ abstract class QapmPlatform extends PlatformInterface {
   Future<dynamic> initialize(Map<String, dynamic> config) {
     throw UnimplementedError('initialize() has not been implemented.');
   }
+
+  Future<String?> customEvent(
+      String category, Map<String, String> tags, Map<String, int> values) {
+    throw UnimplementedError('customEvent() has not been implemented.');
+  }
 }

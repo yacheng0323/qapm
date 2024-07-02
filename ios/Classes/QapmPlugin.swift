@@ -52,7 +52,7 @@ public class QapmPlugin: NSObject, FlutterPlugin {
       let category = dict["category"] as? String,
       let tags = dict["tags"] as? [String: String],
       let values = dict["values"] as? [String: NSNumber] {
-      let eventUUID = QAPM.customEvent(category, tags: tags, values: values)
+      let eventUUID = QAPMUBSMonitor.manager().customEvent(category, tags: tags, values: values)
       if let eventUUID = eventUUID {
          result(eventUUID)
       } else {

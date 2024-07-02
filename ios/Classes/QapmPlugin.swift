@@ -1,5 +1,6 @@
 import Flutter
 import UIKit
+import Foundation
 
 public class QapmPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -31,20 +32,6 @@ public class QapmPlugin: NSObject, FlutterPlugin {
           //   }
           // #endif
           // }
-          do {
-            try QAPM.registerLogCallback { level, log in
-              #if DEBUG 
-              if let log = log {
-                let logString = String(cString: log)
-                print("QAPM: \(logString)")
-              } else {
-                print("QAPM: log is nul")
-              }
-              #endif
-            }
-          } catch let error{
-            print("Error register log Callback :\(error)")
-          }
           QAPMConfig.getInstance().host = "https://app.rumt-sg.com"
           QAPMModelStableConfig.getInstance().setupModelAll()
           QAPM.start(withAppKey: appKey)
@@ -57,4 +44,6 @@ public class QapmPlugin: NSObject, FlutterPlugin {
            result(FlutterMethodNotImplemented)
        }
   }
+
+  
 }

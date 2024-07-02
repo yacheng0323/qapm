@@ -10,39 +10,40 @@ public class QapmPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    if call.method == "qapm" {
-      if let dict = call.arguments as? [String: Any] {
-        if let deviceId = dict["deviceId"] as? String {
-          QAPMConfig.getInstance().deviceID = deviceId
+    switch call.method {
+      case "qapm":
+        if let dict = call.arguments as? [String: Any] {
+          if let deviceId = dict["deviceId"] as? String {
+            QAPMConfig.getInstance().deviceID = deviceId
+          }
+          if let userId = dict["userId"] as? String {
+              QAPMConfig.getInstance().userId = userId
+          }
+          if let customerAppVersion = dict["customerAppVersion"] as? String {
+              QAPMConfig.getInstance().customerAppVersion = customerAppVersion
+          }
+          if let appKey = dict["appKey"] as? String {
+            QAPMConfig.getInstance().collectOptionalFields = true
+            print("qapm sdk version: \(QAPM.sdkVersion())")
+            // QAPM.registerLogCallback { level, log in
+            //   #if DEBUG
+            //     if let log = log {
+            //       print("QAPM: \(String(cString: log))")
+            //     }
+            //   #endif
+            // }
+            QAPMConfig.getInstance().host = "https://app.rumt-sg.com"
+            QAPMModelStableConfig.getInstance().setupModelAll()
+            QAPM.start(withAppKey: appKey)
+          }
+          result(nil)
+        } else {
+          result(FlutterError(code: "INVALID_ARGUMENT", message: "Invalid argument", details: nil))
         }
-        if let userId = dict["userId"] as? String {
-            QAPMConfig.getInstance().userId = userId
-        }
-        if let customerAppVersion = dict["customerAppVersion"] as? String {
-            QAPMConfig.getInstance().customerAppVersion = customerAppVersion
-        }
-        if let appKey = dict["appKey"] as? String {
-          QAPMConfig.getInstance().collectOptionalFields = true
-          print("qapm sdk version: \(QAPM.sdkVersion())")
-          // QAPM.registerLogCallback { level, log in
-          //   #if DEBUG
-          //     if let log = log {
-          //       print("QAPM: \(String(cString: log))")
-          //     }
-          //   #endif
-          // }
-          QAPMConfig.getInstance().host = "https://app.rumt-sg.com"
-          QAPMModelStableConfig.getInstance().setupModelAll()
-          QAPM.start(withAppKey: appKey)
-        }
-        result(nil)
-      } else {
-        result(FlutterError(code: "INVALID_ARGUMENT", message: "Invalid argument", details: nil))
-      }
-    } else if call.method == "customEvent" {
-      handleCustomEvent(call, result: result)
-    } else {
-      result(FlutterMethodNotImplemented)
+      case "customEvent":
+        handleCustomEvent(call, result: result)
+      default:
+        result(FlutterMethodNotImplemented)
     }
   }
 

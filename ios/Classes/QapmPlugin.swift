@@ -24,12 +24,26 @@ public class QapmPlugin: NSObject, FlutterPlugin {
           // 启动QAPM
           QAPMConfig.getInstance().collectOptionalFields = true
           print("qapm sdk version : \(QAPM.sdkVersion())")
-          QAPM.registerLogCallback { level, log in
-          #if DEBUG
-            if let log = log {
-              print("QAPM: \(String(cString: log))")
+          // QAPM.registerLogCallback { level, log in
+          // #if DEBUG
+          //   if let log = log {
+          //     print("QAPM: \(String(cString: log))")
+          //   }
+          // #endif
+          // }
+          do {
+            QAPM.registerLogCallback { level, log in
+              #if DEBUG 
+              if let log = log {
+                let logString = String(cString: log)
+                print("QAPM: \(logString)")
+              } else {
+                print("QAPM: log is nul")
+              }
+              #endif
             }
-          #endif
+          } catch {
+            print("Error register log Callback :\(error)")
           }
           QAPMConfig.getInstance().host = "https://app.rumt-sg.com"
           QAPMModelStableConfig.getInstance().setupModelAll()

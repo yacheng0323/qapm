@@ -32,7 +32,7 @@ public class QapmPlugin: NSObject, FlutterPlugin {
           // #endif
           // }
           do {
-            QAPM.registerLogCallback { level, log in
+            try QAPM.registerLogCallback { level, log in
               #if DEBUG 
               if let log = log {
                 let logString = String(cString: log)
@@ -42,7 +42,7 @@ public class QapmPlugin: NSObject, FlutterPlugin {
               }
               #endif
             }
-          } catch {
+          } catch let error{
             print("Error register log Callback :\(error)")
           }
           QAPMConfig.getInstance().host = "https://app.rumt-sg.com"

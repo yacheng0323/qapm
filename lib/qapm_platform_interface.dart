@@ -23,10 +23,6 @@ abstract class QapmPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  // Future<String?> getPlatformVersion() {
-  //   throw UnimplementedError('platformVersion() has not been implemented.');
-  // }
-
   Future<dynamic> initialize(Map<String, dynamic> config) {
     throw UnimplementedError('initialize() has not been implemented.');
   }
